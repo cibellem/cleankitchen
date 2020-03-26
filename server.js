@@ -2,6 +2,9 @@ require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 const Handlebars = require("handlebars");
+const {
+  allowInsecurePrototypeAccess
+} = require("@handlebars/allow-prototype-access");
 
 var db = require("./models");
 
