@@ -1,40 +1,29 @@
 // import { INSPECT_MAX_BYTES } from "buffer";
 
 var $toCook = $(".toCook");
-var $cooking = $(".cooking")
-var $restart = $(".restart")
-var $recallOrder = $(".recallOrder");
+var $cooking = $(".cooking");
+var $restart = $(".restart");
 
-$toCook.on("dblclick", function () {
-
+$toCook.on("dblclick", function() {
   console.log("changed status to: working");
   var id = $(this).data("id");
   console.log(id);
-  var status = $(this).data("status")
+  var status = $(this).data("status");
 
-
-  var working = "working"
+  var working = "working";
   // Send the PUT request.
   $.ajax("/api/items/" + id, {
     type: "PUT",
     data: {
       status: working
     }
-  }).then(
-    function () {
-
-
-      console.log("changed status to: working");
-      $toCook.addClass("bg-green")
-      // Reload the page to get the updated list
-      window.location.reload();
-    }
-  );
-
-
-
+  }).then(function() {
+    console.log("changed status to: working");
+    $toCook.addClass("bg-green");
+    // Reload the page to get the updated list
+    window.location.reload();
+  });
 });
-
 
 // function highlight(status){
 
@@ -43,54 +32,44 @@ $toCook.on("dblclick", function () {
 //   }
 // }
 
-
-$restart.on("dblclick", function () {
-
+$restart.on("dblclick", function() {
   console.log("changed status to: working");
   var id = $(this).data("id");
   console.log(id);
-  var status = $(this).data("status")
+  var status = $(this).data("status");
 
-  var working = "working"
+  var working = "working";
   // Send the PUT request.
   $.ajax("/api/items/" + id, {
     type: "PUT",
     data: {
       status: working
     }
-  }).then(
-    function () {
-      console.log("changed status to: working");
-      // Reload the page to get the updated list
-      window.location.reload();
-    }
-  );
+  }).then(function() {
+    console.log("changed status to: working");
+    // Reload the page to get the updated list
+    window.location.reload();
+  });
 });
 
-
-$cooking.on("dblclick", function () {
-
+$cooking.on("dblclick", function() {
   var id = $(this).data("id");
-  var finished = "finished"
+  var finished = "finished";
   console.log(id);
   // var status = $(this).data("status")
-  var finished = "finished"
+  var finished = "finished";
   // Send the PUT request.
   $.ajax("/api/items/" + id, {
     type: "PUT",
     data: {
       status: finished
     }
-  }).then(
-    function () {
-      console.log("changed status to: finished");
-      // Reload the page to get the updated list
-      window.location.reload();
-    }
-  );
-
+  }).then(function() {
+    console.log("changed status to: finished");
+    // Reload the page to get the updated list
+    window.location.reload();
+  });
 });
-
 
 function sendNewTime(id, newTime) {
   $.ajax({
@@ -99,9 +78,7 @@ function sendNewTime(id, newTime) {
     data: {
       currentTime: newTime
     }
-  }).then(function (res, err) {
-    console.log("Sent time");
-  })
+  }).then(function(res, err) {});
 }
 
 function incrementTime(currentTime) {
@@ -117,8 +94,7 @@ function incrementTime(currentTime) {
     if (seconds < 10) {
       seconds = "0" + seconds;
     }
-  }
-  else {
+  } else {
     minutes++;
     seconds = "00";
   }
@@ -126,16 +102,13 @@ function incrementTime(currentTime) {
   newTime = `${minutes}:${seconds}`;
 
   return newTime;
+}
 
-};
-
-$recallOrder.on("click", function () {
+$recallOrder.on("click", function() {
   $.ajax({
     url: "/station/:id/recall",
     type: "GET"
-  }).then(
-    function () {
-      console.log('worked too')
-    })
-}
-);
+  }).then(function() {
+    console.log("worked too");
+  });
+});
