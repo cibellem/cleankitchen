@@ -2,7 +2,7 @@
 
 
   <div class=" col-6 mainLogo">
-    <h3 class="logo">Good <br> Afternoon, </h3>
+    <h3 class="logo">Clean <br> Kitchen</h4>
   </div>
   <div class="col-3">
 
@@ -42,42 +42,53 @@
 
 </div>
 
-
-
 <!-- end of sidebar -->
+{{!-- Main page where the server sends the order to the kitchen  --}}
+
 <div class="container mainContainer">
   <div class="row">
-    <div class="col-6">
-      <h6 class="tableN">Table Number</h6>
-      <input id="order-number" class="form-control col-4 " type="text" placeholder="Table Number">
+    <div class="col-12 order-row">
+
       <div class="row">
-        <div class="col">
-          <h6>Select Menu Item</h6>
-          <div class="form-group menu-items">
-            {{#each menu}}
-            {{> menuItem}}
-            {{/each}}
-          </div>
-          <div class="">
-
-          </div>
-
-          <div class="mods">
-
-          </div>
-          <div class="row">
-            <div class="col">
-              <button class="btn btn-primary send-to-db" type="submit">Send to Kitchen</button>
-              <h6> New Order (Close out order)</h6>
-              <button class="btn btn-warning reset">Reset</button>
-
-
-            </div>
-          </div>
-
+        <div class="col form-group menu-items rowMenu col-5">
+          <h6 class="select-menu-item">Select Menu Item:</h6>
+          {{#each menu}}
+          <button class="buttonItems btn " id="item-{{this.id}}">{{this.name}}</button>
+          {{/each}}
 
         </div>
       </div>
+      <div class="">
+
+      </div>
+
+      <div class="mods">
+
+      </div>
+
+      <div class="row">
+
+        <div class="col">
+          <h6 class="tableN">Enter Table Number:</h6>
+          <input id="order-number" class="form-control col-3 " unselectable="on" type="text">
+          <button data-toggle="modal" data-target="#myModal" class="btn  send-to-db" type="submit">Send to
+            Kitchen</button>
+          <button class="btn reset">Reset/Close out</button>
+
+        </div>
+
+
+      </div>
+      <div class="row">
+        <div class="col">
+          {{!-- <h6 class="new-order"> New Order (Close out order)</h6> --}}
+
+
+        </div>
+
+
+      </div>
+
 
 
     </div>
