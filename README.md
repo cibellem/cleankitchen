@@ -1,11 +1,10 @@
-# Clean Kitchen Pos System 
-
+# Clean Kitchen Pos System
 
 ## Description
 
-PoS systems are used in kitchens to track food orders and their progress.  However, these systems could use an upgrade within their design.
+PoS systems are used in kitchens to track food orders and their progress. However, these systems could use an upgrade within their design.
 
-Our project is a readible, user-friendly PoS System for kitchens.  Currently set up for the back of the house.
+Our project is a readible, user-friendly PoS System for kitchens. Currently set up for the back of the house.
 
 ## Goal
 
@@ -23,7 +22,8 @@ Our goal was to create a clean, understandable PoS System by incorporating color
 - We would develop the kitchen to incorporate more elements which would improve the readablity of our system.
 - We would develop the front-of-house PoS system.
 
-## Technologies used 
+## Technologies used
+
 Express.Js <br>
 Postman <br>
 Handlebar.js <br>
@@ -32,16 +32,16 @@ Sequelize
 
 ## Screenshots
 
-![Server](public/serverEntry.png) <br>
+![Server](public/shot.png) <br>
 ![Server](public/expoScreen.png) <br>
 ![Server](public/stationScreen.png) <br>
 ![Recall](public/completed.png) <br>
 
-## Link 
+## Link
+
 Check it out!
 
-https://hidden-lowlands-14981.herokuapp.com/
-
+https://ckitchenpos.herokuapp.com/
 
 ## Contributors
 
