@@ -1,0 +1,103 @@
+<!-- Navbar wth greeting and clock -->
+<nav class="navbar stationNav my-2 ">
+  <div class="row">
+
+
+    <h3 class="logo">Clean <br> Kitchen</h4>
+      {{!-- do I want the logo class here? --}}
+
+  </div>
+
+  <div class="col-3">
+    <h2 class="timer"></h2>
+  </div>
+
+
+
+
+
+</nav>
+<!-- End of Navbar  -->
+
+
+<!-- The sidebar -->
+<div class="sidebar light-card">
+  <div class="dropleft">
+    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      <i class="fas fa-utensils"></i>
+      <p class="sidebarIcon ">Stations</p>
+    </a>
+
+    <div class="itemDropdown dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item itemDropdown" href="/kitchen/station/1">Salads</a>
+      <a class="dropdown-item itemDropdown" href="/kitchen/station/2">Desserts</a>
+
+    </div>
+  </div>
+  <a href="/kitchen/expo"><i class="fas fa-street-view"></i><br>
+    <p class="sidebarIcon ">Expo</p>
+  </a>
+
+  <a href="/kitchen/station/{{station}}/recall"><i class="fas fa-redo-alt"></i> <br>
+    <p class="sidebarIcon recallOrder">Recall Order</p>
+  </a>
+
+  </a>
+  <a href="/"><i class="fas fa-home"></i> <br>
+    <p class="sidebarIcon ">Home</p>
+  </a>
+
+
+</div>
+<!-- end of sidebar -->
+
+{{!-- container with orders to cook --}}
+
+<div class="container containerKitchen">
+  <div class="row center-align">
+
+    <div class="col-6 text-center">
+      <h3 class="stationStart">Start</h3>
+
+    </div>
+    <div class="col-6 text-center">
+      <h3 class="stationCooking">Cooking</h3>
+    </div>
+  </div>
+
+  {{!-- orders to be cooked --}}
+  <div class="row">
+    {{!-- if status of item is "not Started" call partial toCOok handlebar  --}}
+    <div class="col-6 startCol">
+      <div class="row">
+
+        {{#each NotStarted}}
+        {{> toCook}}
+        {{/each}}
+
+      </div>
+
+
+
+    </div>
+
+
+    <div class="col-6 cookingCol">
+
+      <div class="row">
+
+        {{#each Working}}
+        {{> cooking}}
+        {{/each}}
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {{!-- if status of item is "working" call partial cooking handlebar  --}}
+
+
+</div>

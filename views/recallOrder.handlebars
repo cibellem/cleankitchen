@@ -1,0 +1,64 @@
+<!-- Navbar  -->
+<nav class="navbar stationNav my-2 ">
+    <div class="row">
+
+        <h3 class="logo">Clean <br> Kitchen</h4>
+
+
+    </div>
+    <div class="col-3">
+        <h4 class="timer "></h4>
+    </div>
+</nav>
+<!-- End of Navbar  -->
+
+
+<!-- The sidebar -->
+<div class="sidebar light-card">
+    <a href="../{{station}}"><i class="fas fa-arrow-left"></i> <br>
+        <p class="sidebarIcon ">Return</p>
+    </a>
+
+</div>
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="stationRecall text-center">Completed Orders</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        {{#each items}}
+        <div class="col-3">
+
+            <div class="card stationCard restart " data-id="{{this.id}}" data-status="{{this.status}}"
+                style="max-width: 250px;">
+
+                <div class=" card-header restart-orderHead mx-0 px-1 py-0">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="orderHead">Table {{this.orderNumber}}</p>
+                        </div>
+
+                        <div class="col-6 text-right">
+                            <span><i class="far fa-clock text-dark "></i>{{this.currentTime}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body cardBody">
+                    <ul class="  ulStation list-group-flush">
+                        <li class=" liStation list-group-item">{{this.name}} <br>
+                            <small class="mods">{{this.mods}}</small> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

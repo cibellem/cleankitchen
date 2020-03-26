@@ -1,0 +1,120 @@
+{{!-- Navbar wth greeting and clock --}}
+
+
+<nav class="navbar expoNav my-2 ">
+
+  <div class="col-6">
+    <h3 class="logo">Clean <br> Kitchen</h4>
+  </div>
+
+
+  <div class="col-3">
+    <h2 class="timer"></h2>
+
+  </div>
+
+</nav>
+{{!-- End of Navbar  --}}
+
+
+{{!-- The sidebar  --}}
+<div class="sidebar light-card">
+
+  <div class="dropleft">
+    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      <i class="fas fa-utensils"></i>
+      <p class="sidebarIcon ">Stations</p>
+    </a>
+
+    <div class="itemDropdown dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item itemDropdown" href="/kitchen/station/1">Salads</a>
+      <a class="dropdown-item itemDropdown" href="/kitchen/station/2">Desserts</a>
+
+    </div>
+  </div>
+  <a href="/"><i class="fas fa-home"></i> <br>
+    <p class="sidebarIcon ">Home</p>
+  </a>
+
+
+  {{!-- <a href="#services"><i class="fas fa-cog"></i> <br>
+    <p class="sidebarIcon">Settings</p>
+  </a> --}}
+
+</div>
+{{!-- end of sidebar  --}}
+
+
+
+
+<div class="container expoContainer">
+
+  {{!-- Modal when order it's clicked --}}
+  <div class="row">
+    <div class="col">
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content">
+            <div class="modal-header modalHeader">
+
+              <div class="col-3">
+                <p class="tableN ">Table <span id="modal-order-number">Order Number</span></p>
+
+              </div>
+              <div class="col-3">
+                <p class="tableN"><i class=" far fa-clock text-white "> <span id="modal-time">Current time</i></p>
+              </div>
+
+              <div class="col-3 text-right">
+                <i class="  fas fa-times-circle " data-dismiss="modal"></i>
+              </div>
+
+
+            </div>
+            <div class="px-2  modal-body">
+              <ul id="modal-list" class=" ulExpo list-group-flush">
+
+
+
+              </ul>
+
+            </div>
+            <div class=" modal-footer">
+              <div class="col text-right">
+
+                <input id="complete" class="btn btn-success" type="button" value="Complete" data-id="-1">
+
+              </div>
+
+
+
+
+
+            </div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{!-- End of the Modal--}}
+
+
+
+  {{!-- card --}}
+  <div class="row">
+    {{#each items as |item|}}
+
+    {{> item}}
+
+
+    {{/each}}
+
+  </div>
+  {{!-- 
+  end of the card --}}
+</div>

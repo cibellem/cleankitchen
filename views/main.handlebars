@@ -1,0 +1,90 @@
+<nav class="  navbar mainNav my-2 ">
+
+
+  <div class=" col-6 mainLogo">
+    <h3 class="logo">Good <br> Afternoon, </h3>
+  </div>
+  <div class="col-3">
+
+    <h2 class="timer"></h2>
+
+  </div>
+
+</nav>
+<!-- End of Navbar  -->
+
+<!-- The sidebar -->
+<div class="sidebar light-card">
+
+  <a href="/kitchen/expo"><i class="fas fa-street-view"></i><br>
+    <p class="sidebarIcon ">Expo</p>
+  </a>
+
+  <div class="dropleft">
+    <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-utensils"></i>
+      <p class="sidebarIcon ">Stations</p>
+    </a>
+
+    <div class="itemDropdown dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item itemDropdown" href="/kitchen/station/1">Salads</a>
+      <a class="dropdown-item itemDropdown" href="/kitchen/station/2">Desserts</a>
+
+    </div>
+  </div>
+
+
+  <a href="/kitchen/expo"> <i class="fas fa-sign-out-alt"></i><br>
+    <p class="sidebarIcon ">Sign out!</p>
+  </a>
+
+
+
+</div>
+
+
+
+<!-- end of sidebar -->
+<div class="container mainContainer">
+  <div class="row">
+    <div class="col-6">
+      <h6 class="tableN">Table Number</h6>
+      <input id="order-number" class="form-control col-4 " type="text" placeholder="Table Number">
+      <div class="row">
+        <div class="col">
+          <h6>Select Menu Item</h6>
+          <div class="form-group menu-items">
+            {{#each menu}}
+            {{> menuItem}}
+            {{/each}}
+          </div>
+          <div class="">
+
+          </div>
+
+          <div class="mods">
+
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-primary send-to-db" type="submit">Send to Kitchen</button>
+              <h6> New Order (Close out order)</h6>
+              <button class="btn btn-warning reset">Reset</button>
+
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+</div>
+
+</div>

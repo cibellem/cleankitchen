@@ -1,0 +1,26 @@
+<div class="col-6 startCol">
+
+    <div class="card stationCard toCook" data-id="{{this.id}}" data-status="{{this.status}}" style="max-width: 300px;">
+
+        <div class=" card-header toCook-orderHead  mx-0 px-1 py-0">
+            <div class="row">
+                <div class="col-6">
+                    <p class="orderHead">Table {{this.orderNumber}}</p>
+                </div>
+
+                <div class="col-6 text-right">
+                    <i class="far fa-clock text-dark "></i><span id="time-{{this.id}}"
+                        class="current-time">{{this.currentTime}}</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-body cardBody">
+            <ul class="  ulStation list-group-flush">
+                <li class=" liStation list-group-item">{{this.name}} <br>
+                    <small class="mods">{{this.mods}}</small> </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

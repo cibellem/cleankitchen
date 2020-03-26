@@ -1,0 +1,54 @@
+<div class="col-3">
+    <div id="card-{{this.0.orderNumber}}" class="card expoCard" style=" max-width: 16rem;">
+
+        <div class="card-header cardHeader">
+            <div class="row">
+                <div class="col-6">
+                    <p class=" tableN ">Table {{this.0.orderNumber}}</p>
+                </div>
+                <div class="col-6 text-right">
+                    <i class="far fa-clock text-dark "></i><span id="time-{{this.0.id}}"
+                        class="current-time">{{this.0.currentTime}}</span>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        {{#each this}}
+
+        <div class="card-body cardBody text-dark">
+            <ul class=" ulExpo list-group-flush">
+                <li class=" liExpo list-group-item">{{this.name}} <br>
+
+
+                {{#each this.modPackage}}
+
+                    <small class="mods {{this.modStyles}}">{{this.modText}}</small> <br>
+
+                {{/each}}
+                </li>
+
+            </ul>
+        </div>
+
+        {{/each}}
+
+        <div class="card-footer cardFooter">
+            <div class=" row">
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+{{!-- code to make highlight work
+
+style="background-color: {{this.highlight}}"
+
+ --}}

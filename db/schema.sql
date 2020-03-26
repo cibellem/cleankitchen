@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS restaurantDB;
+CREATE DATABASE restaurantDB; 
